@@ -1,7 +1,6 @@
 import { SET_TODO_COMPLETED, SET_TODO_TEXT, ADD_TODO, DELETE_TODO } from "../actions/actions";
 import initialState from "../state/initialState";
 import { getTodoIndex } from "../state/selectors";
-import generateId from "../utils/generateId";
 
 function modifiyTodoWithId(state, id, handler) {
     const todos = state.todos.slice()
@@ -28,11 +27,11 @@ function setTodoText(state, id, text) {
     }))
 }
 
-function createNewTodoWithText(text) {
+function createNewTodoWithText(text, id) {
     return {
         text,
         completed: false,
-        id: generateId()
+        id,
     }
 }
 
@@ -53,7 +52,7 @@ function toDoListReducer(state = initialState, action) {
         case ADD_TODO:
             return {
                 ...state,
-                todos: [createNewTodoWithText(action.payload), ...state.todos],
+                todos: [createNewTodoWithText(action.payload.text, action.payload.id), ...state.todos],
             }
 
         case SET_TODO_COMPLETED:

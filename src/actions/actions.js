@@ -1,3 +1,5 @@
+import {generateId} from "../utils/generateId";
+
 const ADD_TODO = "ADD_TODO"
 const DELETE_ITEM = 'DELETE_ITEM'
 const SET_TODO_TEXT = 'SET_ITEM_TEXT'
@@ -7,7 +9,11 @@ const DELETE_TODO = 'DELETE_TODO'
 function addTodo(text) {
     return {
         type: ADD_TODO,
-        payload: text,
+        payload: {
+            text,
+            id: generateId(),
+        },
+
     }
 }
 
