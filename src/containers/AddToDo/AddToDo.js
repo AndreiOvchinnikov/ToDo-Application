@@ -16,8 +16,6 @@ const useStyles = makeStyles(() => ({
     }
 }));
 
-
-
 function AddToDoComponent(props) {
     const [itemText, setItemText] = React.useState('')
     const classes = useStyles()
@@ -39,7 +37,7 @@ function AddToDoComponent(props) {
                 value={itemText}
                 onChange={handleInput}
                 variant="outlined"
-            ></Input>
+            />
             <Button
                 disabled={!itemText}
                 onClick={handleAddItem}
