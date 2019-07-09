@@ -1,14 +1,16 @@
-const initialAppState = {
+const initialState = {
     todos: [
         {
+            id: '1',
             text: 'Task 1',
-            complete: false,
+            completed: false,
         },
         {
+            id: '2',
             text: 'Task 2',
-            complete: true,
+            completed: true,
         }
     ],
 }
 
-export default initialAppState
+export default initialState

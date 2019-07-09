@@ -4,9 +4,9 @@ import './index.css';
 import configureStore from './store/configureStore';
 import {Provider} from 'react-redux';
 import App from './containers/App/App';
-import initialAppState from './state/initialState';
+import initialState from './state/initialState';
 
-const store = configureStore(initialAppState);
+const store = configureStore(initialState);
 
 const Root = (
     <Provider store={store}>

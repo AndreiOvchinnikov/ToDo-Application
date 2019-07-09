@@ -4,6 +4,6 @@ import rootReducer from '../reducers/reducers';
 export default function configureStore(initialState) {
     return createStore(
       rootReducer,
-      {app: initialState},
+      initialState,
     );
 }
